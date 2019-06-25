@@ -1,0 +1,23 @@
+body {
+  background-color: #eeeeee;
+  padding: 20px;
+  margin: 0;
+  min-width: 518px;
+}
+h1, h2, p, ul, li, label, textarea {
+    font-family: sans-serif;
+  }
+
+header ul li a {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-flex;
+  } 
+
+.active {
+    background-color:#445F62 !important;
+    color: #eeeeee ;
+}
+

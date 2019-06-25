@@ -1,0 +1,100 @@
+body {
+    background-color: #F8C94C;
+    padding: 20px;
+    margin: 0;
+  }
+  h1, h2, p, ul, li {
+    font-family: sans-serif;
+  }
+  ul.header li {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+  }
+  header {
+    background-color: #322F41;
+    padding: 0;
+  }
+  ul.header li a {
+    color: #FFF;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 20px;
+    display: inline-block;
+  }
+  .content {
+    display: grid;
+    background-color: #fff;
+    padding: 20px;
+  }
+  .content h2 {
+    padding: 0;
+    margin: 0;
+  }
+  .content li {
+    margin-bottom: 10px;
+  }
+
+  .active {
+    background-color: #5B977E;
+  }
+
+ .share {
+     
+  }
+  .shareForm {
+      padding: 5%;
+      background-color: #445F62;
+      display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    grid-auto-flow: row dense;
+    grid-gap: .8em;
+    padding: 1.2em;
+  }
+  /* .share form label {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #FFF;
+    margin: 1em;
+} */
+/* input[type=text], select {
+    width: 10%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  } */
+  
+  
+  .myForm {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr;
+    grid-auto-flow: row dense;
+    grid-gap: .8em;
+    background: #eee;
+    padding: 1.2em;
+  }
+  .shareForm > label  {
+    grid-column: 1;
+    grid-row: auto;
+  }
+  .shareForm > input,
+  .shareForm > button {
+    grid-column: 2;
+    grid-row: auto;
+    padding: 1em;
+    border: none;
+  }
+  .shareForm textarea {
+   min-height: calc(100% - 2em);
+   width: 100%;
+   border: none;
+  }
+  #comment-box {
+   grid-column: 3;
+   grid-row: span 3;
+  }
+  .shareForm > button {
+   grid-column: 2 / 4; 
+  }
