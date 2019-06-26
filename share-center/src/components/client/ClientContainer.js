@@ -1,15 +1,17 @@
 import React, { Component } from "react";
-import ShareComponent from './ShareComponent';
+import ClientComponent from './ClientComponent';
 import Axios from "axios";
+import api from "../api";
 
-class Share extends Component {
+class Client extends Component {
 
     constructor(){
         super();
         this.state = {
-            title: '',
-            description: '',
-            comment: '' 
+            name: '',
+            surname: '',
+            birthDate: '',
+            type: 'ORDINARY',
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -18,11 +20,12 @@ class Share extends Component {
     
     handleChange(event) {
         this.setState({[event.target.name]: event.target.value })
+        console.log(event.target.value);
     }
 
     handleSubmit(event) {
         event.preventDefault();
-        Axios.post("http://localhost:8080/api/share", this.state)
+        Axios.post(api.client, this.state)
         .then(console.log(this.state))
         .catch((error)=>{
             console.log(error);
@@ -30,13 +33,14 @@ class Share extends Component {
     }
     render(){
         return (
-            <ShareComponent 
+            <ClientComponent 
                 onChange={this.handleChange}
-                onSubmit={this.handleSubmit}            
+                onSubmit={this.handleSubmit}    
+                type={this.state.type}        
             />
         )
 
     }
 }
 
-export default Share;
+export default Client;

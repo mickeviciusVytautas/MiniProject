@@ -5,7 +5,7 @@ import {
 } from "react-router-dom";
 import Home from "./Home";
 import Contact from "./components/traction/Traction";
-import Share from "./components/share/ShareContainer";
+import Client from "./components/client/ClientContainer";
 import Container from "./components/reusable/Container";
 import Traction from "./components/traction/Traction";
 import Layout from "./components/layout/Layout";
@@ -19,7 +19,7 @@ class Main extends Component {
                         <Route exact path="/" component={Home}/>
                         <Route path="/traction" component={Traction}/>
                         <Route path="/groups" component={Contact}/>
-                        <Route path="/share" component={Share}/>
+                        <Route path="/share" component={Client}/>
                     </Container>
                 </Layout>
             </HashRouter>

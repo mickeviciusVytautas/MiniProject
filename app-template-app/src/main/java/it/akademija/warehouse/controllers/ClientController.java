@@ -1,7 +1,7 @@
-package it.akademija.share.controllers;
+package it.akademija.warehouse.controllers;
 
-import it.akademija.share.dto.ShareRequestDto;
-import it.akademija.share.services.ShareService;
+import it.akademija.warehouse.dto.ClientCreateDto;
+import it.akademija.warehouse.services.ClientService;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,19 +12,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value = "/api/share")
+@RequestMapping(value = "/api/client")
 @Data
-public class ShareController {
+public class ClientController {
 
     @Autowired
-    private final ShareService shareService;
+    private final ClientService clientService;
 
     @PostMapping
-    public ResponseEntity<String> postShare(@RequestBody ShareRequestDto shareRequestDto){
-        if(!shareRequestDto.getTitle().isEmpty()){
-            if(shareService.postShare(shareRequestDto)){
-                return new ResponseEntity<String>(HttpStatus.CREATED);
-            }
+    public ResponseEntity<String> createClient(@RequestBody ClientCreateDto clientCreateDto){
+        if(clientService.createClient(clientCreateDto)){
+            return new ResponseEntity<String>(HttpStatus.CREATED);
         }
         return new ResponseEntity<String>(HttpStatus.BAD_REQUEST);
     }
