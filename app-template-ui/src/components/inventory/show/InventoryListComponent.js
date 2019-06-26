@@ -5,7 +5,7 @@ import Heading from '../../reusable/Heading';
 import Table from '../../reusable/Table';
 
 
-const ClientListComponent = props => {
+const InventoryListComponent = props => {
     const { clients } = props;
     const listOfItems = clients ?  clients.map((client, index) => 
     <TableRow item={client} index={index}/>
@@ -19,4 +19,4 @@ const ClientListComponent = props => {
   </Container>
 }
 
-export default ClientListComponent;
+export default InventoryListComponent;

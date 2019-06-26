@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Axios from "axios";
 import ClientListComponent from "./ClientListComponent";
 import api from "../../api";
-class ClientListContainer extends Component {
+class InventoryListContainer extends Component {
   constructor(){
     super();
     this.state = {
@@ -31,4 +31,4 @@ class ClientListContainer extends Component {
   }
 }
  
-export default ClientListContainer;
+export default InventoryListContainer;
