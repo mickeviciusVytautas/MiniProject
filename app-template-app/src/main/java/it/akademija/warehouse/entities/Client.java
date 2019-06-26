@@ -1,6 +1,5 @@
 package it.akademija.warehouse.entities;
 
-import it.akademija.Library.entities.User;
 import it.akademija.warehouse.auxilary.ClientType;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;

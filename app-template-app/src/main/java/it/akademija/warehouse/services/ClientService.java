@@ -26,7 +26,6 @@ public class ClientService {
     private final ModelMapper modelMapper = new ModelMapper();
 
     public boolean createClient(ClientRequestDto clientCreateDto){
-//        BeanUtils.copyProperties(clientCreateDto, Client.class);
         Client client = modelMapper.map(clientCreateDto, Client.class);
         clientRepository.save(client);
         return true;

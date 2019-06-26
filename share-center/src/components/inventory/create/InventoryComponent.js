@@ -7,15 +7,14 @@ import Label from "../../reusable/Label";
 import Form from "../../reusable/Form";
 import GridContainer from "../../reusable/GridContainer";
 import GridColumn from '../../reusable/GridColumn';
-import Select from "../../reusable/Select";
 
 const InventoryComponent = (props) => {
 
-    const { onChange, onSubmit, type } = props;
+    const { onChange, onSubmit, type, id } = props;
 
     return (  
         <Container full fullVertical className="share">
-            <Heading h3>Create an inventory for client Id #{'a'} </Heading>
+            <Heading h3>Create an inventory for client Id #{id} </Heading>
             <Form onSubmit={onSubmit}>
                 <GridContainer columns="2">
                 <GridColumn column="1">
@@ -27,40 +26,38 @@ const InventoryComponent = (props) => {
                         placeholder="Enter name" 
                         onChange={onChange}
                         required/>
-                    <Label for="surname">Surname</Label>
+                    <Label for="weight">Weight</Label>
                     <Input 
-                        label="surname" 
-                        type="text" 
-                        name="surname" 
-                        id="surname" 
-                        placeholder="Enter surname" 
+                        label="weight" 
+                        type="number" 
+                        name="weight" 
+                        id="weight" 
+                        placeholder="Enter weight" 
                         onChange={onChange}
                     />      
-                    <Label for="birthDate">Birth date</Label>
-                    <Input 
-                        label="birthDate" 
-                        type="date" 
-                        name="birthDate" 
-                        id="birthDate" 
-                        placeholder="Enter birthDate" 
-                        onChange={onChange}
-                    />                        
+                           
                 </GridColumn>
                 <GridColumn column="2">
-                <Label for="number">Phone number</Label>
+                <Label for="inventoryDate">Inventory date</Label>
+                    <Input 
+                        label="inventoryDate" 
+                        type="date" 
+                        name="inventoryDate" 
+                        id="inventoryDate" 
+                        placeholder="Enter inventoryDate" 
+                        onChange={onChange}
+                    />                 
+                <Label for="sectorNumber">Sector number</Label>
                 <Input 
-                    label="number" 
-                    type="text" 
-                    name="number" 
-                    id="number" 
-                    placeholder="Enter phone number" 
+                    label="sectorNumber" 
+                    type="number" 
+                    name="sectorNumber" 
+                    id="sectorNumber" 
+                    placeholder="Enter sector number" 
                     onChange={onChange}
+                    min="1"
+                    max="40"
                 />     
-                <Label for="type">Client type</Label>
-                <Select onChange={onChange} name="type" value={type}>
-                    <option value="ORDINARY">Ordinary</option>
-                    <option value="LOYAL">Loyal</option>
-                </Select>
                 </GridColumn>
                 </GridContainer>
                     <Button>Submit</Button>

@@ -15,7 +15,7 @@ const StyledButton = styled.button`
     outline: none;
     border: none;
     cursor: pointer;
-    margin: ${props => props.simple ? '5px 10px': '15px auto'};
+    margin: ${props => props.simple ? '5px 10px': '100px auto'};
     border: 2px solid ${props => (props.secondary ? '#808f87' : props.simple ? '#55555' : '#a1cdf1')};
     ${props => {
         return (

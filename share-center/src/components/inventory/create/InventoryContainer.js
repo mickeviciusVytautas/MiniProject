@@ -21,8 +21,6 @@ class InventoryContainer
     
     handleChange(event) {
         this.setState({[event.target.name]: event.target.value })
-        console.log(event.target.value);
-        console.log(this.props.match.params)
     }
 
     handleSubmit(event) {
@@ -33,12 +31,15 @@ class InventoryContainer
             alert(error);
         })
     }
+    
     render(){
+        console.log();
         return (
             <InventoryComponent 
                 onChange={this.handleChange}
                 onSubmit={this.handleSubmit}    
-                type={this.state.type}        
+                type={this.state.type}
+                id={this.props.match.params.clientId}        
             />
         )
 
