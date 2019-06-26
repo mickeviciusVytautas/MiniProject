@@ -25,7 +25,7 @@ class InventoryContainer
 
     handleSubmit(event) {
         event.preventDefault();
-        Axios.post(api.client, this.state)
+        Axios.post(api.inventory + "/" + this.props.match.params.clientId, this.state)
         .then(alert("Succesfully updated!"))
         .catch((error)=>{
             alert(error);
