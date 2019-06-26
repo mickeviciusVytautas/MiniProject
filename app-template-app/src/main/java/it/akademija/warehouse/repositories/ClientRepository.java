@@ -13,11 +13,14 @@ import java.util.Optional;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long> {
 
+    @Query("SELECT c FROM Client c WHERE c.id = :id")
+    Optional<Client> getClientById(@Param("id") Long id);
+
     @Query("SELECT new it.akademija.warehouse.dto.ClientRequestDto " +
             "(c.name, c.surname, c.birthDate, c.number, c.type) "+
             "FROM Client c WHERE c.id = :id")
-    Optional<ClientRequestDto> getClientById(@Param("id") Long id);
+    Optional<ClientRequestDto> getClientDtoById(@Param("id") Long id);
 
-    @Query("SELECT c FROM Client c")
-    List<Client> getAll(Pageable pageable);
+    @Query("SELECT new it.akademija.warehouse.dto.ClientRequestDto (c.id, c.name, c.surname, c.birthDate, c.number) FROM Client c")
+    List<ClientRequestDto> getClientDtoList(Pageable pageable);
 }

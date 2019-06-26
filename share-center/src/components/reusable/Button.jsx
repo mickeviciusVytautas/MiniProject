@@ -4,18 +4,19 @@ import Loader from './Loader'
 
 const StyledButton = styled.button`
     border-radius: 5px;
-    background-color: ${props => (props.secondary ? '#808f87' : '#a1cdf1')};
+    background-color: ${props => (props.secondary ? '#808f87' : props.simple ? '#555555' : '#a1cdf1')};
     color: #fff;
-    padding: 10px 15px;
+    padding: ${props => props.simple ? '5px':'10px 15px'};
     font-size: ${props => {
         if (props.big) return '20px'
+        if(props.simple) return '14px'
         return '16px'
     }};
     outline: none;
     border: none;
     cursor: pointer;
-    margin: 15px auto;
-    border: 2px solid ${props => (props.secondary ? '#808f87' : '#a1cdf1')};
+    margin: ${props => props.simple ? '5px 10px': '15px auto'};
+    border: 2px solid ${props => (props.secondary ? '#808f87' : props.simple ? '#55555' : '#a1cdf1')};
     ${props => {
         return (
             props.inverse &&
@@ -26,11 +27,12 @@ const StyledButton = styled.button`
         )
     }};
     width: 50%;
+    display: ${props => props.none ? 'none': ''}
 `
 
-const Button = ({ secondary, big, inverse, loading, children, ...props }) => {
+const Button = ({ secondary, big, inverse, loading, children, none, ...props }) => {
     return (
-        <StyledButton secondary={secondary} big={big} inverse={inverse} {...props}>
+        <StyledButton secondary={secondary} big={big} inverse={inverse} none={none} {...props}>
             {loading ? <Loader small white /> : children}
         </StyledButton>
     )

@@ -4,13 +4,11 @@ import {
     HashRouter
 } from "react-router-dom";
 import Home from "./Home";
-import Contact from "./components/traction/Traction";
-import Client from "./components/client/create/ClientContainer";
 import Container from "./components/reusable/Container";
-import Traction from "./components/traction/Traction";
 import Layout from "./components/layout/Layout";
 import ClientListContainer from "./components/client/show/ClientListContainer";
-
+import ClientContainer from "./components/client/create/ClientContainer"
+import InventoryContainer from "./components/inventory/create/InventoryContainer";
 class Main extends Component {
     render() {
         return (
@@ -19,8 +17,8 @@ class Main extends Component {
                     <Container fullVertical backgroundWhite heightStatic>
                         <Route exact path="/" component={Home}/>
                         <Route path="/clientList" component={ClientListContainer}/>
-                        <Route path="/groups" component={Contact}/>
-                        <Route path="/share" component={Client}/>
+                        <Route path="/inventory/:clientId" component={InventoryContainer}/>
+                        <Route path="/share" component={ClientContainer}/>
                     </Container>
                 </Layout>
             </HashRouter>

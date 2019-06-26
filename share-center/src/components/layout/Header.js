@@ -6,7 +6,7 @@ import Heading from '../reusable/Heading';
 
 const Header = (props) => {
     return <header>
-        <Heading h3>Trophy</Heading>
+        <Heading h3>Warehouse Control System</Heading>
         <List inline dark class="router" role="navigation">
             <ListItem><NavLink exact to="/">Home</NavLink></ListItem>
             <ListItem><NavLink to="/clientList">Client List</NavLink></ListItem>

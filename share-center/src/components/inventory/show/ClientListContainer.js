@@ -14,12 +14,6 @@ class ClientListContainer extends Component {
     //   { id: '4', name: 'Good name', surname: 'Happy surname', birthDate: 'Famous birthDate'},
     ]
   }
-  this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick(event){
-      event.preventDefault();
-      this.props.history.push("/inventory/" + (event.target.id));
   }
 
   componentDidMount(){
@@ -32,7 +26,6 @@ class ClientListContainer extends Component {
     return (
       <ClientListComponent
         clients={clients}
-        handleClick={this.handleClick}
       />
     )
   }

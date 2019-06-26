@@ -5,14 +5,13 @@ import it.akademija.warehouse.entities.Client;
 import it.akademija.warehouse.repositories.ClientRepository;
 import lombok.Data;
 import org.modelmapper.ModelMapper;
-import org.modelmapper.TypeToken;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.lang.reflect.Type;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,23 +23,22 @@ public class ClientService {
     @Autowired
     private final ClientRepository clientRepository;
 
-
     private final ModelMapper modelMapper = new ModelMapper();
 
     public boolean createClient(ClientRequestDto clientCreateDto){
+//        BeanUtils.copyProperties(clientCreateDto, Client.class);
         Client client = modelMapper.map(clientCreateDto, Client.class);
         clientRepository.save(client);
         return true;
     }
 
     public Optional<ClientRequestDto> getClientById(Long id){
-        return clientRepository.getClientById(id);
+        return clientRepository.getClientDtoById(id);
     }
 
     public List<ClientRequestDto> getClients(int page){
-        Pageable pageable = PageRequest.of(page, 10);
-        Type listType = new TypeToken<List<ClientRequestDto>>(){}.getType();
-        return modelMapper.map(clientRepository.getAll(pageable), listType);
+        Pageable pageable = PageRequest.of(page, 5);
+        return clientRepository.getClientDtoList(pageable);
     }
 
 }

@@ -13,7 +13,7 @@ const StyledFooter = styled.footer`
     margin-bottom: 0px;
 `
 const Footer = () => {
-    return <StyledFooter><Container center small>Trophy <sup>&reg;</sup></Container></StyledFooter>
+    return <StyledFooter><Container center small>Warehouse Control System <sup>&reg;</sup></Container></StyledFooter>
 
 }
 

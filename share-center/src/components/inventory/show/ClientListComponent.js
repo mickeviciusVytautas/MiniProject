@@ -6,15 +6,14 @@ import Table from '../../reusable/Table';
 
 
 const ClientListComponent = props => {
-    const { clients, handleClick } = props;
-    console.log(handleClick);
+    const { clients } = props;
     const listOfItems = clients ?  clients.map((client, index) => 
-    <TableRow item={client} index={index} onClick={handleClick}/>
+    <TableRow item={client} index={index}/>
     ) : '';
     return <Container>
     <Heading h3>Client list</Heading>
     <Table>
-      <TableRow header item={clients ? clients[0] !== undefined ? clients[0] : '' : ''} index={-1}/>
+      <TableRow header item={clients ? clients[0] != undefined ? clients[0] : '' : ''}/>
       {listOfItems}
     </Table>
   </Container>
