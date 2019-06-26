@@ -38,13 +38,13 @@ const InventoryComponent = (props) => {
                            
                 </GridColumn>
                 <GridColumn column="2">
-                <Label for="inventoryDate">Inventory date</Label>
+                <Label for="creationDate">Inventory date</Label>
                     <Input 
-                        label="inventoryDate" 
+                        label="creationDate" 
                         type="date" 
-                        name="inventoryDate" 
-                        id="inventoryDate" 
-                        placeholder="Enter inventoryDate" 
+                        name="creationDate" 
+                        id="creationDate" 
+                        placeholder="Enter creationDate" 
                         onChange={onChange}
                     />                 
                 <Label for="sectorNumber">Sector number</Label>

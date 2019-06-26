@@ -15,7 +15,7 @@ public class InventoryController {
     @Autowired
     private InventoryService inventoryService;
 
-    @PostMapping
+    @PostMapping(value = "/{clientId}")
     public ResponseEntity<String> createInventory(@RequestBody InventoryRequestDto inventoryRequestDto, @PathVariable Long clientId){
         return inventoryService.createInventory(inventoryRequestDto, clientId);
     }

@@ -9,10 +9,7 @@ class InventoryContainer
     constructor(){
         super();
         this.state = {
-            name: '',
-            surname: '',
-            birthDate: '',
-            type: 'ORDINARY',
+           
         }
 
         this.handleChange = this.handleChange.bind(this);
@@ -25,15 +22,18 @@ class InventoryContainer
 
     handleSubmit(event) {
         event.preventDefault();
+        const a = api.inventory + "/" + this.props.match.params.clientId;
+        console.log(a)
         Axios.post(api.inventory + "/" + this.props.match.params.clientId, this.state)
-        .then(alert("Succesfully updated!"))
+        .then(alert("Succesfully updated!a"))
         .catch((error)=>{
             alert(error);
         })
     }
     
     render(){
-        console.log();
+        const a = api.inventory + "/" + this.props.match.params.clientId;
+        console.log(a)
         return (
             <InventoryComponent 
                 onChange={this.handleChange}
