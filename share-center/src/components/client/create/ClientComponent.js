@@ -1,13 +1,13 @@
 import React from 'react';
-import Button from "../reusable/Button";
-import Container from "../reusable/Container";
-import Heading from "../reusable/Heading";
-import Input from "../reusable/Input";
-import Label from "../reusable/Label";
-import Form from "../reusable/Form";
-import GridContainer from "../reusable/GridContainer";
-import GridColumn from '../reusable/GridColumn';
-import Select from "../reusable/Select";
+import Button from "../../reusable/Button";
+import Container from "../../reusable/Container";
+import Heading from "../../reusable/Heading";
+import Input from "../../reusable/Input";
+import Label from "../../reusable/Label";
+import Form from "../../reusable/Form";
+import GridContainer from "../../reusable/GridContainer";
+import GridColumn from '../../reusable/GridColumn';
+import Select from "../../reusable/Select";
 
 const ClientComponent = (props) => {
 

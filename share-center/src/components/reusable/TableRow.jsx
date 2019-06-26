@@ -14,7 +14,6 @@ const StyledTableRow = styled.tr`
 
 const TableRow = props => {
     const { item, header } = props;
-    console.log(header);
     const spreadItem = 
         header ? Object.keys(item).map((key) =>  <TableData header>{key}</TableData>) 
         : Object.keys(item).map((value) =>  <TableData>{item[value]}</TableData>);

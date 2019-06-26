@@ -1,6 +1,7 @@
 package it.akademija.warehouse.auxilary;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
 import it.akademija.warehouse.entities.Client;
 import org.apache.commons.lang3.StringUtils;
 
@@ -20,6 +21,16 @@ public enum ClientType {
     @JsonCreator
     public static ClientType forValue(String value) {
         return typeMap.get(StringUtils.lowerCase(value));
+    }
+
+    @JsonValue
+    public String toValue() {
+        for (Map.Entry<String, ClientType> entry : typeMap.entrySet()) {
+            if (entry.getValue() == this)
+                return entry.getKey();
+        }
+
+        return null; // or fail
     }
 }
 

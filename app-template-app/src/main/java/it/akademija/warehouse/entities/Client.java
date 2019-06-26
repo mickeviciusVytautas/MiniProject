@@ -7,6 +7,7 @@ import lombok.Data;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -24,6 +25,6 @@ public class Client {
 
     private ClientType type;
 
-    @ManyToOne
-    private User user;
+    @OneToMany
+    private List<Inventory> inventoryList;
 }

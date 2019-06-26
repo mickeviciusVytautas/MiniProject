@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ClientComponent from './ClientComponent';
 import Axios from "axios";
-import api from "../api";
+import api from "../../api";
 
 class Client extends Component {
 
@@ -26,9 +26,9 @@ class Client extends Component {
     handleSubmit(event) {
         event.preventDefault();
         Axios.post(api.client, this.state)
-        .then(console.log(this.state))
+        .then(alert("Succesfully updated!"))
         .catch((error)=>{
-            console.log(error);
+            alert(error);
         })
     }
     render(){
